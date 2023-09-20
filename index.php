@@ -1,28 +1,10 @@
 <?php   
 include __DIR__ . "/Movies.php";
+include __DIR__ . "/classes/Movie.php";
 
 
-class Movie {
-    public $titolo;
-    public $genere;
-    public $anno;
 
 
-    public function __construct($_titolo,$_genere,$_anno)
-    // funzione per creare un nuovo Movie
-    {
-        $this->titolo = $_titolo;
-        $this->genere = $_genere;
-        $this->anno = $_anno;
-    }
-
-    public function echoFilm() {
-        echo "Titolo " . $this->titolo . "<br>";
-        echo "Genere " . $this->genere . "<br>";
-        echo "Anno " . $this->anno . "<br>";
-    }
-
-}
 
 ?>
 
@@ -64,6 +46,18 @@ class Movie {
             echo "<h5>" . $film["Anno"] . "</h5>";
             echo "</div>";
             echo "</div>";
+        }
+
+        ?>
+    
+        
+    </div>
+
+    <div class="row row-cols-4 gap-3">
+        <?php
+        
+        foreach ($films as $film) {
+            printHTML($film);
         }
 
         ?>
